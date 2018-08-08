@@ -23,7 +23,7 @@ RUN echo "{\"ES_END_POINT\": \"$ES_END_POINT\"}" | \
     mustache - /app/default.conf > \
     /app/default.conf-new
 
-FROM nginx
+FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html/
 

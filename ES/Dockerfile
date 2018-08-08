@@ -1,4 +1,4 @@
-FROM elasticsearch:5.6.10
+FROM elasticsearch:5.6-alpine
 
-RUN apt-get update
-RUN apt-get -y upgrade
+RUN apk update
+RUN apk upgrade

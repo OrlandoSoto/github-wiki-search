@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:2-alpine
 
 ENV ES_HOST http://elasticsearch:9200/
 ENV GH_AUTH_TOKEN gh_auth_token
@@ -9,11 +9,11 @@ ENV GHE_HOST http://ghe/
 ENV GHE_USER ghe_user
 ENV JIRA_HOST https://jira/
 
-RUN apt-get -y update
-RUN apt-get -y upgrade
-RUN apt-get install gcc \
-    make g++ ca-certificates zlib1g-dev libffi-dev \
-    libxml2 libxslt1-dev libxslt-dev libxml2-dev
+RUN apk update
+RUN apk upgrade
+RUN apk add gcc \
+    make g++ ca-certificates zlib-dev libffi-dev \
+    libxml2 libxslt-dev libxml2-dev curl
 
 ADD . /app/server
 
