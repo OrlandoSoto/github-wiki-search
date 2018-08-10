@@ -38,5 +38,5 @@ ENV PYTHONPATH=$PYTHONPATH:/app
 
 WORKDIR /app
 
-# run indexing at 5 am every morning
-CMD ["/usr/local/bin/mantra", "01 01 05 * * *", "python", "/app/server/index.py"]
+# note that the cron line below is UTC
+CMD ["/usr/local/bin/mantra", "01 01 09 * * *", "python", "/app/server/index.py"]
