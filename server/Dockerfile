@@ -11,9 +11,18 @@ ENV JIRA_HOST https://jira/
 
 RUN apk update
 RUN apk upgrade
-RUN apk add gcc \
-    make g++ ca-certificates zlib-dev libffi-dev \
-    libxml2 libxslt-dev libxml2-dev curl
+RUN apk add \
+    ca-certificates \
+    curl \
+    g++ \
+    gcc \
+    git \
+    libffi-dev \
+    libxml2 \
+    libxml2-dev \
+    libxslt-dev \
+    make \
+    zlib-dev
 
 ADD . /app/server
 
